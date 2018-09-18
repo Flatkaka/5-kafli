@@ -13,6 +13,7 @@ def invalid (att, main):
     else:
         print('Not a valid direction!')
         att = input('Direction: ')
+    return att
 def move (att,x,y):
     if att == 'n' or att == 'N':
         y += 1
@@ -29,19 +30,19 @@ while True:
         main = '(N)orth'
         travel(main)
         att = direction()
-        invalid(att, main )
+        att = invalid(att, main )
         x,y = move(att, x, y)
     if x== 1 and y == 2:
-        main = '(N)orth or (E)est or (S)outh'
+        main = '(N)orth or (E)ast or (S)outh'
         travel(main)
         att = direction()
-        invalid(att, main )
+        att = invalid(att, main )
         x,y = move(att, x, y)
     if x== 2 and y == 2:
-        main = '(S)outh or (East)'
+        main = '(S)outh or (W)est'
         travel(main)
         att = direction()
-        invalid(att, main )
+        att = invalid(att, main )
         x,y = move(att, x, y)
     if x== 2 and y == 1:
         main = '(N)orth'
@@ -50,30 +51,29 @@ while True:
         invalid(att, main )
         x,y = move(att, x, y)
     if x== 1 and y == 3:
-        main = '(E)est or (S)outh'
+        main = '(E)ast or (S)outh'
         travel(main)
         att = direction()
-        invalid(att, main )
+        att = invalid(att, main )
         x,y = move(att, x, y)
     if x== 2 and y == 3:
-        main = '(E)est or (W)est'
+        main = '(E)ast or (W)est'
         travel(main)
         att = direction()
-        invalid(att, main )
+        att = invalid(att, main )
         x,y = move(att, x, y)
     if x== 3 and y == 3:
         main = '(S)outh or (W)est'
         travel(main)
         att = direction()
-        invalid(att, main )
+        att = invalid(att, main )
         x,y = move(att, x, y)
     if x== 3 and y == 2:
         main = '(N)orth or (S)outh'
         travel(main)
         att = direction()
-        invalid(att, main )
+        att = invalid(att, main )
         x,y = move(att, x, y)
     if x == 3 and y == 1:
         print('Victory!')
         break
-
