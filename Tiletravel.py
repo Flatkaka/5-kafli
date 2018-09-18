@@ -79,4 +79,5 @@ while True:
             y -= 1
     if x == 3 and y == 1:
         print('Vitctory!')
+        break
 
