@@ -24,56 +24,31 @@ def move (att,x,y):
     else:
         x -= 1
     return x,y
+def leidir (x,y):
+    if y == 1:
+        main = '(N)orth'
+    elif y == 2:
+        if x == 1:
+            main = '(N)orth or (E)ast or (S)outh'
+        elif x == 2:
+            main = '(S)outh or (W)est'
+        else:
+            main = '(N)orth or (S)outh'
+    else:
+        if x == 1:
+            main = '(E)ast or (S)outh'
+        elif x == 2:
+            main = '(E)ast or (W)est'
+        else:
+            main = '(S)outh or (W)est'
+    return main
 
-while True:
-    if x == 1 and y == 1:
-        main = '(N)orth'
+while x < 4 and y < 4:
+        main = leidir(x,y)
         travel(main)
         att = direction()
         att = invalid(att, main )
         x,y = move(att, x, y)
-    if x== 1 and y == 2:
-        main = '(N)orth or (E)ast or (S)outh'
-        travel(main)
-        att = direction()
-        att = invalid(att, main )
-        x,y = move(att, x, y)
-    if x== 2 and y == 2:
-        main = '(S)outh or (W)est'
-        travel(main)
-        att = direction()
-        att = invalid(att, main )
-        x,y = move(att, x, y)
-    if x== 2 and y == 1:
-        main = '(N)orth'
-        travel(main)
-        att = direction()
-        invalid(att, main )
-        x,y = move(att, x, y)
-    if x== 1 and y == 3:
-        main = '(E)ast or (S)outh'
-        travel(main)
-        att = direction()
-        att = invalid(att, main )
-        x,y = move(att, x, y)
-    if x== 2 and y == 3:
-        main = '(E)ast or (W)est'
-        travel(main)
-        att = direction()
-        att = invalid(att, main )
-        x,y = move(att, x, y)
-    if x== 3 and y == 3:
-        main = '(S)outh or (W)est'
-        travel(main)
-        att = direction()
-        att = invalid(att, main )
-        x,y = move(att, x, y)
-    if x== 3 and y == 2:
-        main = '(N)orth or (S)outh'
-        travel(main)
-        att = direction()
-        att = invalid(att, main )
-        x,y = move(att, x, y)
-    if x == 3 and y == 1:
+     if x == 3 and y == 1:
         print('Victory!')
         break
