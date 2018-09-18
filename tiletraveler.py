@@ -49,6 +49,6 @@ while x < 4 and y < 4:
         att = direction()
         att = invalid(att, main )
         x,y = move(att, x, y)
-     if x == 3 and y == 1:
-        print('Victory!')
-        break
+        if x == 3 and y == 1:
+            print('Victory!')
+            break
